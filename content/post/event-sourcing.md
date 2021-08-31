@@ -17,15 +17,15 @@ Martin Fowler and Greg Young have both written great definitions of Event Sourci
 
 [Martin Fowler, 2005](https://martinfowler.com/eaaDev/EventSourcing.html):
 
-    "Event Sourcing ensures that all changes to application state are stored as a sequence of events."
+>"Event Sourcing ensures that all changes to application state are stored as a sequence of events."
 
 [Greg Young, 2014](https://www.slideshare.net/JAXLondon2014/event-sourcing-greg-young):
 
-    "Event Sourcing says all state is transient and you only store facts."
+>"Event Sourcing says all state is transient and you only store facts."
 
 Another good definition I came cross is in this [Microsoft's article]((https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)):
 
-    "Instead of storing just the current state of the data in a domain, use an append-only store to record the full series of actions taken on that data."
+>"Instead of storing just the current state of the data in a domain, use an append-only store to record the full series of actions taken on that data."
 
 Two key words here are "state" and "events". One for my early confusions about Event Sourcing was because I was overly focusing on "events" but overlooked "state". In fact, Event Sourcing, at its core, is about storing and representing "state as events".
 
