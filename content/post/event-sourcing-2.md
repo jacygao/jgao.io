@@ -4,7 +4,10 @@ date: 2021-08-30T23:58:26+10:00
 draft: true
 ---
 
-This is the 2nd blog of the series on Event Sourcing. If you are not familiar with the concept, make sure to check out [Demystifying Event Sourcing](https://add.link).
+This is the 2nd blog of the series on Event Sourcing. If you are not familiar with the concept, make sure to check out [Demystifying Event Sourcing](https://jgao.io/post/event-sourcing/).
+
+# Status
+In Progress
 
 # Event Sourcing in real life
 
@@ -26,13 +29,18 @@ From an implementation perspective, logging often happens after an event or a pr
 
 Auditability, on the other hand, cannot torlerate such failure. Therefore, certain concensus algorithms such as 2PC are often applied to ensure the ACID for the audit log. Event Sourcing addresses this problem by making "logging" the only operation to store both state and logs which lead to consistency of auditability.
 
-# Event Sourcing in Software Development
+# Examples of Event Sourcing Implementations
 
-Git is often referred by Event Sourcing, However, Git is not an implementation of Event Sourcing. Git uses the snapshotting technique to keep its history of commits, but these snapshots are not events. 
+Git is often referred by Event Sourcing, However, Git is not an implementation of Event Sourcing. Git uses the snapshotting technique to keep its history of commits. This technique is commonly used with Event Sourcing. However snapshots are not events.
 
-Relational databases are good examples of Event Sourcing by storing transaction logs as the source of truth.
+Database management systems are good examples of Event Sourcing. Records presented in the database are materialised by applying a series of transaction logs. The source of truth are the transaction logs. In case of any system or operation failures such as crashes or hardware failures, the records can be effectively restored or rolled back from reviewing the transaction logs.
 
 Order Management is often partially implemented with Event Sourcing. The main intension is to address the issue with consistency across multiple operations. An event store can be used as both database and queue.
 
-# Should I care
+# The real benifits of Event Sourcing
 
+# When should you use Event Sourcing
+
+# References
+
+https://en.wikipedia.org/wiki/Transaction_log
