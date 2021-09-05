@@ -88,9 +88,13 @@ Replayablily is often mentioned as one of the benefits of Event Sourcing. Howeve
 
 [Martin Fowler 2006](https://martinfowler.com/eaaDev/EventNarrative.html):
 
-> "With a command you tell a system to do X. Events, however, just communicate that something happened - with an event you let a system know that Y has happened."
+>"With a command you tell a system to do X. Events, however, just communicate that something happened - with an event you let a system know that Y has happened."
 
-According to the definition from Martin, a Command is a request made to the system to do something. At this point a lot of things can still happen. It can fail, it can be influenced by external state where an event is something that happen and that cannot be changed.
+According to the definition from Martin, a Command is a request made to the system to do something. At this point a lot of things can still happen. It can fail, it can be influenced by external state. Nevertheless, an event is something already happened and that cannot be changed.
+
+A simple workflow representation of Event Sourcing can be descibed as `State -> Event -> State`. In this case, the event itself is deterministic. It has all required information to make the state transition and perform an "closure".
+
+In contrast, Command Sourcing can be described as `State -> Command -> Event`. In this case, the command itself does not have all required information to determine a state change but rely on an external input. A consequence of this is that you can't simply replay a stream of logged commands at some arbitrary time and guarantee to get the same outputs as you would if they were handled immediatly. 
 
 The replayablily of Event Sourcing is about replaying the events in an event store, sometimes from a most recent snapshot, to recreate the current state of the records as opposed to replaying the commands in which in that case, is Command Sourcing.
 
