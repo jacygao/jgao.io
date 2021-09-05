@@ -88,7 +88,7 @@ Replayablily is often mentioned as one of the benefits of Event Sourcing. Howeve
 
 [Martin Fowler 2006](https://martinfowler.com/eaaDev/EventNarrative.html):
 
-    "With a command you tell a system to do X. Events, however, just communicate that something happened - with an event you let a system know that Y has happened."
+> "With a command you tell a system to do X. Events, however, just communicate that something happened - with an event you let a system know that Y has happened."
 
 According to the definition from Martin, a Command is a request made to the system to do something. At this point a lot of things can still happen. It can fail, it can be influenced by external state where an event is something that happen and that cannot be changed.
 
